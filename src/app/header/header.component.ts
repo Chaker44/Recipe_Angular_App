@@ -19,13 +19,9 @@ export class HeaderComponent implements OnInit {
 
 
 
-  selectRecipeLink(){
-    this.recipesLinkClicked.emit(true);
-  }
-  
-  selectShoppingLink(){
-    this.shoppingLinkClicked.emit(true);
-
-  }    
+ selectFeature (feature: string){
+  this.selectedFeature.emit(feature);
+ 
+ }
 
 }
