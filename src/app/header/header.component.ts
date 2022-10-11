@@ -10,8 +10,8 @@ export class HeaderComponent implements OnInit {
 
 
 
-  @Output() recipesLinkClicked = new EventEmitter<boolean>();
-  @Output() shoppingLinkClicked = new EventEmitter<boolean>();
+  @Output() selectedFeature = new EventEmitter<string>();
+  
   constructor() { }
 
   ngOnInit(): void {
@@ -19,13 +19,9 @@ export class HeaderComponent implements OnInit {
 
 
 
-  selectRecipeLink(){
-    this.recipesLinkClicked.emit(true);
-  }
-  
-  selectShoppingLink(){
-    this.shoppingLinkClicked.emit(true);
-
-  }    
+ selectFeature (feature: string){
+  this.selectedFeature.emit(feature);
+ 
+ }
 
 }

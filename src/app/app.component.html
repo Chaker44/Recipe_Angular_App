@@ -1,9 +1,9 @@
-<app-header (recipesLinkClicked)="navigateToRecipePage()" (shoppingLinkClicked)="navigateToShoopingListPage()"></app-header>
+<app-header (selectedFeature)="navigateTo($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <app-recipes *ngIf="homePage || navigateToRecipe"></app-recipes>
-      <app-shopping-list *ngIf="navigateToShopping"></app-shopping-list>
+      <app-recipes *ngIf="defaultFeature === 'recipe'"></app-recipes>
+      <app-shopping-list *ngIf="defaultFeature !== 'recipe'"></app-shopping-list>
     </div>
   </div>
 </div>
